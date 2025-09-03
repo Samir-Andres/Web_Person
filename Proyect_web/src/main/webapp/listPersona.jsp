@@ -7,6 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Gestión de Personas</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  
 
 <style>
 body {
@@ -75,7 +77,7 @@ h1, h2, h3 {
 
 .button {
 	display: inline-block;
-	padding: 8px 12px;
+	padding: 5px 12px;
 	margin-right: 5px;
 	font-size: 14px;
 	font-weight: bold;
@@ -94,15 +96,24 @@ h1, h2, h3 {
 
 .button-primary:hover {
 	background-color: #0056b3;
+		color: white;
+	list-style: none;
+	text-decoration: none;
 }
 
 .button-warning {
 	background-color: #ffc107;
 	color: #212529;
+	color: white;
+	list-style: none;
+	text-decoration: none;
 }
 
 .button-warning:hover {
 	background-color: #e0a800;
+	color: white;
+	list-style: none;
+	text-decoration: none;
 }
 
 .button-danger {
@@ -112,6 +123,9 @@ h1, h2, h3 {
 
 .button-danger:hover {
 	background-color: #c82333;
+	color: white;
+	list-style: none;
+	text-decoration: none;
 }
 
 .text-center {
@@ -120,8 +134,7 @@ h1, h2, h3 {
 
 th {
 	text-align: center;
-
-
+	
 }
 
 .simple-input {
@@ -173,11 +186,39 @@ th {
     outline: none;
     background-color: #fff;
 }
+.form1{
+display: inline;
+padding: 8px 12px;
+text-decoration: none;
+text-decoration: none;
+
+}
+
+
+.boton-flotante-soporte {
+    position: fixed; /* Se mantiene en la misma posición relativa a la ventana del navegador */
+    top: 20px;       /* Distancia desde la parte superior de la ventana */
+    right: 20px;     /* Distancia desde el borde derecho de la ventana */
+    z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+    display: block;
+}
+.icono-soporte {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+
 </style>
 </head>
 <body>
 
+      
+     <a href="CorreoSupports.jsp" class="boton-flotante-soporte"><img class="icono-soporte" src="imagenes/soporte.png" alt="Soporte">Soporte</a>
+ 
 	<div class="container">
+			
+			
 		<div class="header-title">
 			<h2>Gestión de Personas</h2>
 		</div>
@@ -202,7 +243,12 @@ th {
 				</select>
 				
 				<button type="submit" class="button button-primary">Aplicar</button>
+				
+				<a class="button button-primary form1" href="PDF_Descargas.jsp">Descargar PDF</a>
 			</form>
+			
+			
+			
 		</div>
 
 		<div class="table-container">
@@ -232,8 +278,13 @@ th {
 					</c:forEach>
 				</tbody>
 			</table>
+			
+			
+			
+			
 		</div>
-
+	
+			
 	</div>
 
 </body>
