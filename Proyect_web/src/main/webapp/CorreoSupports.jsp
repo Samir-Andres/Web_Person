@@ -45,6 +45,45 @@
             font-weight: bold;
             text-align: center;
         }
+        
+         .btn-custom {
+         margin: 10px auto;
+        width: 100%;
+        font-size: 1.25rem; /* Tamaño de fuente más grande */
+        padding: 10px 30px; /* Relleno del botón */
+        border-radius: 50px; /* Bordes muy redondeados para un look moderno */
+        font-weight: bold;
+        transition: all 0.3s ease; /* Transición suave para los efectos */
+        border: none;
+        background-image: linear-gradient(45deg, #007bff, #0056b3); /* Fondo con degradado */
+        color: white;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    }
+      .btn-custom:hover {
+        transform: translateY(-5px); /* Efecto de "levantar" al pasar el mouse */
+        box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
+        background-image: linear-gradient(45deg, #0056b3, #007bff);
+    }
+    
+     .btn-warning:hover {
+        transform: translateY(-5px); /* Efecto de "levantar" al pasar el mouse */
+        box-shadow: 0 0 0 1px rgba(255, 193, 7, 0.5);
+     
+    }
+    
+     .btn-warning {
+      margin: 5px auto;
+        width: 100%;
+        font-size: 20px; /* Tamaño de fuente más grande */
+        padding: 10px 30px; /* Relleno del botón */
+        border-radius: 50px; /* Bordes muy redondeados para un look moderno */
+        font-weight: bold;
+        transition: all 0.3s ease; /* Transición suave para los efectos */
+        border: none;
+        color: white;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    }
+        
     </style>
 </head>
 <body>
@@ -62,7 +101,9 @@
         <label for="mensaje">Mensaje:</label>
         <textarea class="form-control"  id="mensaje" name="mensaje" rows="6" required></textarea>
 
-        <button class="btn btn-primary" type="submit">Enviar</button>
+        <button class="btn-custom" type="submit">Enviar</button>
+         <a href="PersonasServlet" class="btn btn-warning" >Volver</a>
+    
     </form>
 
     <%
