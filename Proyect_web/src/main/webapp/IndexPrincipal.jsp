@@ -30,18 +30,27 @@ h3 {
 }
 
 .navbar-brand {
-	color: red;
+	color: white;
+}
+
+.navbar-brand:hover {
+	color: black;
 }
 </style>
 </head>
 <body>
 
-	<nav class="navbar navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Mi App</a>
-			<div class="d-flex">
-				<a href="Login.jsp" class="btn btn-outline-light me-2">Inicio de
-					Sesión</a> <a href="#" class="btn btn-outline-light">Registro</a>
+			<a class="navbar-brand" href="">Mi web</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav ms-auto">
+					<a href="Login.jsp" class="btn btn-outline-light me-2">Inicio de Sesión</a>
+					<a href="#" class="btn btn-outline-light">Registro</a>
+				</div>
 			</div>
 		</div>
 	</nav>
@@ -49,13 +58,12 @@ h3 {
 	<div class="container mt-5">
 		<div class="row justify-content-center">
 			<div class="col-md-6">
-				<div class="card">
-					<div class="card-header text-center">
+				<div class="card bg-light border-primary">
+					<div class="card-header text-center bg-primary text-white">
 						<h2>Pagina principal RPA</h2>
 					</div>
-
-					<div>
-						<p>Esta es una página diseñada para el registro de nuevos
+					<div class="card-body">
+						<p class="card-text">Esta es una página diseñada para el registro de nuevos
 							usuarios en nuestra plataforma. Al completar el siguiente
 							formulario, podrás crear una cuenta y acceder a todas las
 							funcionalidades exclusivas para miembros. Te invitamos a unirte a
@@ -69,8 +77,7 @@ h3 {
 	</div>
 
 	<div class="container mt-5">
-		<div>
-
+		<div class="p-4 bg-light border rounded">
 			<h3>¡Bienvenido a nuestra comunidad!</h3>
 			<p>Estamos encantados de que estés aquí. Este es el primer paso
 				para unirte a un espacio donde la conexión, el conocimiento y la
@@ -88,11 +95,6 @@ h3 {
 				explorar todo lo que te espera!</p>
 
 		</div>
-
-
-
 	</div>
-
-
 </body>
 </html>
