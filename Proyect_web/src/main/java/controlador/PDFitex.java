@@ -38,27 +38,31 @@ public class PDFitex extends HttpServlet {
 	
 		response.setContentType("application/pdf");
 		response.setHeader("Content-Disposition", "inline; filename=\"Reporte_no:.pdf\"");
+		
+		// Crea una instancia o objeto  del documento PDF.
 		Document document  = new Document();
 		Connection connection = null;
 
 		try {
-			// 1. Configurar el escritor de PDF
+			//Configurar el escritor de PDF
 			PdfWriter.getInstance(document, response.getOutputStream());
 			document.open();
 			
-			// 2. Conectar a la base de datos
+			//Conectar a la base de datos
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_tiendamascotas", "root", "123456");
 			
 			if (connection != null) {
+				
+				// Agrega un título y una línea separadora al documento.
 				document.add(new Paragraph("Reporte de personas"));
 				document.add(new Paragraph("-----------------------------------"));
 
-				// 3. Crear el Statement y ejecutar la consulta
+				//Crear el Statement y ejecutar la consulta
 				Statement stmt = connection.createStatement();
 				ResultSet rs = stmt.executeQuery("SELECT id_usuario, usuario, contrasena, tipo_usuario, rol FROM tblusuarios");
 
-				// 4. Leer los resultados y agregarlos al PDF
+				//Leer los resultados y agregarlos al PDF
 				while (rs.next()) {
 					String id = rs.getString("id_usuario");
 					String usuario = rs.getString("usuario");
@@ -68,10 +72,10 @@ public class PDFitex extends HttpServlet {
 				
 					
 					// Agregar cada fila de datos como un nuevo párrafo en el documento
-					document.add(new Paragraph("ID: " + id + ", Usuario: " + usuario + ", Contrasena: " + contrasena +  "Tipo de usuario " + tipo_usuario + " rol: " + rol));
+					document.add(new Paragraph("ID: " + id + ", Usuario: " + usuario + ", Contrasena: " + contrasena +  " Tipo de usuario " + tipo_usuario + " rol: " + rol));
 				}
 				
-				// 5. Cerrar el ResultSet y el Statement
+				//Cerrar el ResultSet y el Statement
 				rs.close();
 				stmt.close();
 
@@ -90,7 +94,7 @@ public class PDFitex extends HttpServlet {
 				}
 			}
 		} finally {
-			// 6. Cerrar el documento y la conexión en el bloque finally
+			//Cerrar el documento y la conexión en el bloque finally
 			if (document.isOpen()) {
 				document.close();
 			}
