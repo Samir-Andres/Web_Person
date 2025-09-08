@@ -36,23 +36,28 @@ public class PDFitex extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		// Establece el tipo de contenido de la respuesta a PDF.
 		response.setContentType("application/pdf");
+		
+		// Configura el encabezado para que el navegador muestre el PDF en línea y le asigne un nombre de archivo.
 		response.setHeader("Content-Disposition", "inline; filename=\"Reporte_no:.pdf\"");
 		
-		// Crea una instancia o objeto  del documento PDF.
+		// Crea una instancia del objeto Document de iText.
 		Document document  = new Document();
 		Connection connection = null;
 
 		try {
-			//Configurar el escritor de PDF
+			
+			// Configura el escritor de PDF para que escriba en el flujo de salida de la respuesta del servlet.
 			PdfWriter.getInstance(document, response.getOutputStream());
 			document.open();
 			
-			//Conectar a la base de datos
+			// Carga el driver de la base de datos MySQL.
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			// Establece una conexión a la base de datos
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_tiendamascotas", "root", "123456");
 			
-			if (connection != null) {
+			if (connection != null) { // Verifica si la conexión fue exitosa.
 				
 				// Agrega un título y una línea separadora al documento.
 				document.add(new Paragraph("Reporte de personas"));
@@ -60,6 +65,8 @@ public class PDFitex extends HttpServlet {
 
 				//Crear el Statement y ejecutar la consulta
 				Statement stmt = connection.createStatement();
+				
+				// Ejecuta la consulta y obtiene un conjunto de resultados
 				ResultSet rs = stmt.executeQuery("SELECT id_usuario, usuario, contrasena, tipo_usuario, rol FROM tblusuarios");
 
 				//Leer los resultados y agregarlos al PDF
@@ -75,7 +82,7 @@ public class PDFitex extends HttpServlet {
 					document.add(new Paragraph("ID: " + id + ", Usuario: " + usuario + ", Contrasena: " + contrasena +  " Tipo de usuario " + tipo_usuario + " rol: " + rol));
 				}
 				
-				//Cerrar el ResultSet y el Statement
+				//Cerrar el ResultSet y el Statement y cierra la consulta sql
 				rs.close();
 				stmt.close();
 

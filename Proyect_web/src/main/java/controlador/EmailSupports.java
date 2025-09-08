@@ -32,7 +32,6 @@ public class EmailSupports extends HttpServlet {
         	 // Establece la versión del protocolo TLS para asegurar una conexión segura.
             System.setProperty("https.protocols", "TLSv1.2,TLSv1.3");
 
-            
             // Configura las propiedades de la sesión de correo para la conexión SMTP de Gmail.
             Properties props = new Properties();
             props.put("mail.smtp.auth", "true");
@@ -41,15 +40,14 @@ public class EmailSupports extends HttpServlet {
             props.put("mail.smtp.port", "587");
             props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
             
-            
-            // Crea una nueva sesión de correo con las propiedades y un autenticador.
+            // Crea una nueva sesión de correo con las propiedades y un autenticador.crea y configura una sesión de correo,
             Session session = Session.getInstance(props, new Authenticator() {
                 protected PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication(CORREO_REMITENTE, CONTRASENA);
                 }
             });
 
-         // Crea un mensaje de correo electrónico.
+         // Crea un mensaje de correo electrónico. 
             Message messageObj = new MimeMessage(session);
             messageObj.setFrom(new InternetAddress(CORREO_REMITENTE));
             messageObj.setRecipients(Message.RecipientType.TO, InternetAddress.parse(correoDestino));

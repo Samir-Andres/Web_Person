@@ -15,7 +15,7 @@
     }
     .form-container {
         max-width: 600px;
-        margin: 50px auto;
+        margin: 10px auto;
         padding: 30px;
         background-color: #ffffff;
         border-radius: 10px;
@@ -58,6 +58,26 @@
         background-color: #f8d7da;
         color: black;
     }
+    
+      .btn-warning:hover {
+        transform: translateY(-5px); /* Efecto de "levantar" al pasar el mouse */
+        box-shadow: 0 0 0 1px rgba(255, 193, 7, 0.5);
+     
+    }
+    
+     .btn-warning {
+     margin: 10px auto;
+        width: 100%;
+        font-size: 20px; /* Tamaño de fuente más grande */
+        padding: 10px 30px; /* Relleno del botón */
+        border-radius: 50px; /* Bordes muy redondeados para un look moderno */
+        font-weight: bold;
+        transition: all 0.3s ease; /* Transición suave para los efectos */
+        border: none;
+        color: white;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    }
+    
 </style>
 </head>
 <body>
@@ -102,6 +122,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary btn-custom">Enviar</button>
+        <a href="PersonasServlet?action=listPersona" class="btn btn-warning">Volver a la Lista</a>
     </form>
 </div>
 

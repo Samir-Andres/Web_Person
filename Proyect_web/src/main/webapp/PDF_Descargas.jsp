@@ -100,6 +100,7 @@
         %>
         <a href="PDFitex" class="btn btn-custom" target="_blank">Generar Reporte PDF</a>
         <a href="TablaPDF" class="btn btn-custom" target="_blank">Tabla PDF</a>
+        <a href="DescargarExcelServlet" class="btn btn-custom" target="_blank">Exportar Excel</a>
         <a href="PersonasServlet" class="btn btn-warning">Volver</a>
     </div>
 

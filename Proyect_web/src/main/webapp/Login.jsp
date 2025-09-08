@@ -60,6 +60,13 @@
             color: red;
             margin-top: 10px;
         }
+        
+        .Form-group1{
+         margin-top: -10px;
+         margin-right: 45%;
+         margin-bottom: 20px;
+        
+        }
     </style>
 </head>
 <body>
@@ -77,6 +84,9 @@
         <div class="form-group">
             <label for="password">Contraseña:</label>
             <input type="password" id="contrasena" name="contrasena" required>
+        </div>
+        <div class="Form-group1">
+         <a class="Recuperar" href="RecuperarContraseña.jsp">Recuperar contraseña</a>
         </div>
         <input type="submit" value="Ingresar">
     </form>

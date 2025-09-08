@@ -73,9 +73,9 @@ public class TablaPDF extends HttpServlet {
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_tiendamascotas", "root", "123456");
 
 			if (connection != null) {
-				
 				// Crear tabla PDF con 4 columnas
 				PdfPTable table = new PdfPTable(4);
+				
 				table.setWidthPercentage(100);
 				table.setSpacingBefore(10f);
 				table.setSpacingAfter(10f);

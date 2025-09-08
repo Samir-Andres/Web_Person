@@ -207,7 +207,23 @@ text-decoration: none;
     height: 60px;
     display: block;
 }
+.boton-flotante-campana{
+    position: fixed; /* Se mantiene en la misma posición relativa a la ventana del navegador */
+    top: 110px;       /* Distancia desde la parte superior de la ventana */
+    right: 20px;     /* Distancia desde el borde derecho de la ventana */
+    z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+    display: block;
+    margin: 10px;
 
+}
+.icono-campana{
+    width: 40px;
+    height: 40px;
+    display: block;
+    right: 20px;
+    
+
+}
 
 </style>
 </head>
@@ -215,7 +231,7 @@ text-decoration: none;
 
       
      <a href="CorreoSupports.jsp" class="boton-flotante-soporte"><img class="icono-soporte" src="imagenes/soporte.png" alt="Soporte">Soporte</a>
- 
+      <a href="dashboard.jsp" class="boton-flotante-campana"><img class="icono-campana" src="imagenes/notificacion.png"></a>
 	<div class="container">
 			
 			

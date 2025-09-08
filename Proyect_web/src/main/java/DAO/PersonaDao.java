@@ -40,10 +40,10 @@ public class PersonaDao {
         this.connection = con.conectarBD();
     }
 
-    /**
-     * Método para insertar una persona en la base de datos.
-     * Tras una inserción exitosa, envía una notificación por correo.
-     * @param persona objeto Personas con los datos a insertar
+    /*
+      Método para insertar una persona en la base de datos.
+      Tras una inserción exitosa, envía una notificación por correo.
+     
      */
     public void addPersona(Personas persona) {
         try {
@@ -64,10 +64,10 @@ public class PersonaDao {
         }
     }
     
-    /**
-     * Método privado para enviar una notificación por correo electrónico
-     * cuando se registra una nueva persona.
-     * @param persona objeto Personas recién insertado
+    /*
+      Método privado para enviar una notificación por correo electrónico
+      cuando se registra una nueva persona.
+     
      */
     private void sendEmailNotification(Personas persona) {
     	

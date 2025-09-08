@@ -16,13 +16,20 @@
         .form-container {
             background-color: #fff;
             max-width: 500px;
-            margin: auto;
+            margin: 5px auto;
             padding: 30px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 8px;
         }
         h2 {
             text-align: center;
+        }
+        
+        .form-1{
+        margin: 10px auto;
+        border: 2px dotted black; 
+        padding: 30px 30px 0;
+        
         }
         input, textarea {
             width: 100%;
@@ -83,6 +90,51 @@
         color: white;
         box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
     }
+    
+    .icono-whatsapp {
+    margin: 0 10px;
+    width: 60px;
+    height: 60px;
+    display: inline;
+    border-radius: 30px; 
+}
+
+   .icono-whatsapp:hover {
+   border-radius: 60px; 
+   box-shadow: 0 5px 5px #2CFF32;
+   
+ 
+}
+    .icono-facebook {
+    margin: 0 100px;
+    width: 60px;
+    height: 60px;
+    display: inline;
+     border-radius: 30px; 
+   
+}
+    
+   .icono-facebook:hover{
+   border-radius: 40px; 
+   box-shadow: 0 5px 5px #3864FF;
+   
+}
+    .icono-telegram {
+    margin: 0 10px;
+    width: 60px;
+    height: 60px;
+    display: inline;
+    border-radius: 30px; 
+    
+   
+}
+    .icono-telegram:hover {
+    border-radius: 40px; 
+    box-shadow: 0 5px 5px #38DAFF;
+    
+  
+   
+}
         
     </style>
 </head>
@@ -118,6 +170,21 @@
     <%
         }
     %>
+</div>
+
+
+<div class="form-container form-1">
+         
+         <div class="Redes">
+           <div class="Redes-item"> 
+          <a href=""><img alt="" src="imagenes/whatsapp.jpg" class="icono-whatsapp" draggable="false" ></a>
+          <a href=""><img alt="" src="imagenes/facebook.jpg" class="icono-facebook" draggable="false"></a>
+          <a href=""><img alt="" src="imagenes/telegram.jpg" class="icono-telegram" draggable="false"></a>
+           
+           </div>
+ 
+       </div>
+
 </div>
 
 </body>
