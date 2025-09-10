@@ -36,6 +36,28 @@ h3 {
 .navbar-brand:hover {
 	color: black;
 }
+.h1{
+background-color: #34B4EA;
+width: 100%;
+height: 100%;
+
+}
+.fom{
+border: 1px solid black;
+border-radius: 20px; 
+background-color: #34B4EA;
+}
+
+.rounded{
+background-color: 	#F0C07E;
+
+
+}
+.p-4{
+background-color: 	#F0C07E;
+
+}
+
 </style>
 </head>
 <body>
@@ -43,13 +65,16 @@ h3 {
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="">Mi web</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav ms-auto">
-					<a href="Login.jsp" class="btn btn-outline-light me-2">Inicio de Sesión</a>
-					<a href="#" class="btn btn-outline-light">Registro</a>
+					<a href="Login.jsp" class="btn btn-outline-light me-2">Inicio
+						de Sesión</a> <a href="#" class="btn btn-outline-light">Registro</a>
 				</div>
 			</div>
 		</div>
@@ -63,11 +88,12 @@ h3 {
 						<h2>Pagina principal RPA</h2>
 					</div>
 					<div class="card-body">
-						<p class="card-text">Esta es una página diseñada para el registro de nuevos
-							usuarios en nuestra plataforma. Al completar el siguiente
-							formulario, podrás crear una cuenta y acceder a todas las
-							funcionalidades exclusivas para miembros. Te invitamos a unirte a
-							nuestra comunidad para disfrutar de una experiencia completa.</p>
+						<p class="card-text">Esta es una página diseñada para el
+							registro de nuevos usuarios en nuestra plataforma. Al completar
+							el siguiente formulario, podrás crear una cuenta y acceder a
+							todas las funcionalidades exclusivas para miembros. Te invitamos
+							a unirte a nuestra comunidad para disfrutar de una experiencia
+							completa.</p>
 
 					</div>
 
@@ -95,6 +121,6 @@ h3 {
 				explorar todo lo que te espera!</p>
 
 		</div>
-	</div>
+	</div>	
 </body>
 </html>

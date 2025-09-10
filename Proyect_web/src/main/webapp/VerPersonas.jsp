@@ -1,4 +1,4 @@
-w<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -8,7 +8,6 @@ w<%@ page language="java" contentType="text/html; charset=UTF-8"
 <title>Detalles de la Persona</title>
 
 <style>
-/* Aquí puedes reutilizar los estilos de tu archivo listPersona.jsp */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f2f5;

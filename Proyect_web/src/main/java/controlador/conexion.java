@@ -6,17 +6,20 @@ import java.sql.SQLException;
 
 public class conexion {
 
-
+//Establece y retorna una conexión a la base de datos MySQL.
+//Este método gestiona el proceso de conexión, incluyendo la carga del driver,la definición de los parámetros de la base de datos 
+//URL, usuario, contraseña) y el manejo de posibles errores.
     public Connection conectarBD() {
         
         // Objeto que almacenará la conexión
         Connection conexion = null;
 
-        // Parámetros de conexión a la base de datos
+        
         String url = "jdbc:mysql://localhost:3306/bd_tiendamascotas"; // URL de la BD (puerto y nombre)
         String usuario = "root";                                     // Usuario de MySQL
         String contraseña = "123456";                                // Contraseña de MySQL
-
+        
+        
         try {
             // Cargar el driver JDBC para MySQL
             Class.forName("com.mysql.cj.jdbc.Driver");

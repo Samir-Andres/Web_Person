@@ -11,6 +11,9 @@ import javax.mail.internet.*;
 import java.io.IOException;
 import java.util.Properties;
 
+//Servlet para el envío de correos electrónicos de soporte mientras que el serblet servlet maneja las solicitudes HTTP POST para enviar un correo
+// electrónico a una dirección de destino con un asunto y mensaje específicos,utilizando las credenciales de una cuenta de Gmail.
+
 @WebServlet("/EmailSupports")
 public class EmailSupports extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -18,7 +21,8 @@ public class EmailSupports extends HttpServlet {
     // Credenciales del correo de origen
     private static final String CORREO_REMITENTE = "samirandres296@gmail.com";
     private static final String CONTRASENA = "vwbm iiml fcmo tgnz"; // Usa contraseña de aplicación
-
+//Maneja las solicitudes HTTP de tipo POST,  Este método se invoca cuando se envía un formulario HTML con el método POST
+    //a la URL mapeada a este servlet (/EmailSupports).
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
