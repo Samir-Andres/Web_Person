@@ -13,21 +13,29 @@ import java.util.List;
 import java.sql.SQLException;
 
 /**
- * Servlet encargado de manejar las operaciones CRUD sobre Personas.
- * Controla las vistas (insertar, editar, listar, ver y eliminar) 
- * interactuando con el DAO y JSP correspondientes.
+ * En este servlet se declaran las variables para las acciones lineas 26-28 que redirige a una pagina jsp
+ * en el metodo doget se declaram Variables para redirigir (forward) y  para las acciones  (forward).
+ * Se crea un try-catch dentro de este se crea unas condicionales if-else-if y else en estas condiciones 
+ * son las acciones del crud  el VIEW_PERSONA para ver los datos de las personas, INSERT_OR_EDIT para editar
+ * y insertar personas y el LIST_PERSONA que redirige a la lista de personas.
+ * 
+ * En el metodo doget se crea un metodo (listPersonas) se utiliza para filtras las personas de las lista
+ * del listPersona.jsp, dentro de este metodo se declaran parametros de ordenamiento, despues de esto se obtiene
+ * la lista de la clase (PersonaDao) con una lista y despues de esto se muestra los datos segun la busqueda del usuario.
+ * 
+ * 
+ * 
  */
 @WebServlet("/PersonasServlet")
 public class PersonasServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    // Vistas JSP para cada acción
     private static final String INSERT_OR_EDIT = "/index.jsp";      // Formulario de inserción/edición
     private static final String LIST_PERSONA = "/listPersona.jsp";  // Listado principal
     private static final String VIEW_PERSONA = "/VerPersonas.jsp";  // Vista de detalles
 
-    private PersonaDao dao; // DAO para acceder a la base de datos
+    private PersonaDao dao; 
 
     /**
      * Constructor: inicializa el DAO de Persona.
