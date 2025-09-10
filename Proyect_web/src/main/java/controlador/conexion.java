@@ -6,9 +6,11 @@ import java.sql.SQLException;
 
 public class conexion {
 
-//Establece y retorna una conexión a la base de datos MySQL.
-//Este método gestiona el proceso de conexión, incluyendo la carga del driver,la definición de los parámetros de la base de datos 
-//URL, usuario, contraseña) y el manejo de posibles errores.
+//En esta clase se establece y retorna una conexión a la base de datos MySQL.
+//Este método (conectarBD) gestiona el proceso de conexión, incluyendo la 
+//carga del driver,la definición de los parámetros de la base de datos 
+//URL, usuario, contraseña) y el manejo de posibles errores que captura exepcion 
+//si no se encuentra el driver o los parametros de la base de datos .
     public Connection conectarBD() {
         
         // Objeto que almacenará la conexión
@@ -21,23 +23,18 @@ public class conexion {
         
         
         try {
-            // Cargar el driver JDBC para MySQL
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Establecer la conexión con la base de datos
             conexion = DriverManager.getConnection(url, usuario, contraseña);
             System.out.println("Conexión exitosa a la base de datos.");
 
         } catch (ClassNotFoundException e) {
-            // Se lanza cuando no se encuentra el driver JDBC en el proyecto
             System.err.println("No se encontró el driver JDBC: " + e.getMessage());
 
         } catch (SQLException e) {
-            // Se lanza cuando ocurre un error al intentar conectarse (credenciales/URL incorrectas)
             System.err.println("Error al conectar a la base de datos: " + e.getMessage());
         }
 
-        // Retorna la conexión (null si falló)
         return conexion;
     }
 }

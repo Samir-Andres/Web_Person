@@ -31,9 +31,18 @@ public class PDFitex extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+    /* En este servlet (pdfitex) se utiliza el metodo  doget pra genera un reporte pdf de usuarios de la tabla tblusarios de la base de datos.
+     * En este servlet de le establece la repuesta que en este caso es un pdf, se configuara los encabezados y se le asigna el nombre.
+     * Tambien de crea un objetos de la clase documento de la libreria y un objeto de Connetion despues de esto se crea un bloque try-catch para gestionar los errores
+     * sea de la conexion a la base de datos o del document.
+     * dentro del bloque try-catch se configura el escrito de pdf y se abre el documento, tambien se carga el driver y se declara la ruta de de la base de datos con 
+     * su credenciales, se hace un if con la condicion para verificar la conexion, se agrega el titulo del pdf y se ejecuta la consulta (Script) agregando cada uno de los 
+     * atributos al reporte del pdf segun la variable declara dentro del while, despues de esto de cierra la consulta de la base de datos y el documento y si hubo errores 
+     * en la verificacion de la base de datos sale por el else  
+     * 
+     * 
+     * */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		// Establece el tipo de contenido de la respuesta a PDF.
