@@ -22,17 +22,20 @@ import java.sql.Statement;
 public class DescargarExcelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public DescargarExcelServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /*En este servlet llamado (DescargarExcelServlet) sirve para generar un reporte de la base de datos de la tabla personas
+     * En el metodo doget se le indica que será un documento de excel y se le agrega un nombre sl docuemnto en la linea 38
+     * Se crea objetos de las clases PrintWriter, Connection, Statement, ResultSet  para escribir texto en el documento, la conexio
+     * de la base de datos y ejecutar las consultas a la base de datos.
+     * Dentro de este metodo se crea un try-catch se hace la carga del driver y se defie los parametros de conexion, despues 
+     * de esto se crea un statement y se ejcuta la consulta. Dentro de un while se rellena los campos deacuerdo con sus variables declaradas
+     * cualquiera error se captura cualquier error se captura en el catch y se cierra el ResultSet, ResultSet, Connection y Statement
+     * 
+     * */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	 
 		response.setContentType("application/vnd.ms-excel");
