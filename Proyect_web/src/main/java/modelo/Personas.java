@@ -7,7 +7,7 @@ public class Personas {
 	 * el acceso alas variables donde se permite leer y modificar.
 	 * 
 	 * */
-
+	
 	private int id;
 	private String nombre;
 	private String apellido;

@@ -16,14 +16,13 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
+import controlador.TwilioSMS;
 import controlador.conexion;
 import modelo.Personas;
 
 /**
- * Clase DAO (Data Access Object) para gestionar la entidad Personas. Se encarga
- * de realizar operaciones CRUD en la base de datos y además enviar
- * notificaciones por correo electrónico.
+ * En esta clase (PersonaDao) se encuentras los metodos que se utilizan para hacer el crud a la base de datos.
+ * 
  */
 public class PersonaDao {
 
@@ -36,6 +35,7 @@ public class PersonaDao {
 	 */
 	public PersonaDao() {
 		conexion con = new conexion();
+		TwilioSMS twilioSMS = new TwilioSMS();
 		this.connection = con.conectarBD();
 	}
 
@@ -59,16 +59,27 @@ public class PersonaDao {
 
 			// Llamar al método de envío de correo después de una inserción exitosa
 			sendEmailNotification(persona);
+			
+			String NumDestino = "+573143651187";
+			String mensaje = String.format("Los datos insertados son: " + "Nombre: %s\n" + "Apellido: %s\n" + "Edad: %d ", 
+			persona.getNombre(),
+			persona.getApellido(),
+			persona.getEdad());
+			
+			TwilioSMS.SMS(NumDestino, mensaje);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	
 
-	/*
-	 * Método privado para enviar una notificación por correo electrónico cuando se
-	 * registra una nueva persona.
-	 * 
+	/**
+	 * Método privado para enviar una notificación por correo electrónico.
+	 * Se utiliza el protocolo **SMTP** con autenticación para enviar el correo
+	 * a un destinatario fijo tras una inserción exitosa.
+	 * * @param persona El objeto {@code Personas} insertado, cuyos datos se incluyen en el cuerpo del correo.
 	 */
 	private void sendEmailNotification(Personas persona) {
 
@@ -120,9 +131,8 @@ public class PersonaDao {
 	}
 
 	/**
-	 * Método para eliminar una persona de la base de datos según su ID.
-	 * 
-	 * @param personaId identificador de la persona a eliminar
+	 * Metodo para eliminar una persona de la base de datos usando su identificador único.
+	 * * @param personaId El identificador (ID) de la persona a eliminar.
 	 */
 	public void deletePersona(int personaId) {
 		try {
@@ -139,9 +149,8 @@ public class PersonaDao {
 	}
 
 	/**
-	 * Método para actualizar los datos de una persona existente.
-	 * 
-	 * @param persona objeto Personas con la información actualizada
+	 * Actualiza los datos (nombre, apellido, edad) de una persona existente.
+	 * La persona a actualizar se identifica por su ID.
 	 */
 	public void updatePersona(Personas persona) {
 		try {
@@ -182,10 +191,10 @@ public class PersonaDao {
 	}
 
 	/**
-	 * Método para obtener una persona específica por su ID.
-	 * 
-	 * @param personaId identificador de la persona
-	 * @return objeto Personas con los datos obtenidos
+	 * Recupera una persona específica de la base de datos usando su ID.
+	 * * @param personaId El identificador (ID) de la persona a buscar.
+	 * @return Objeto {@code Personas} con los datos obtenidos. Retorna un objeto
+	 * Personas vacío o con valores por defecto si no se encuentra el ID o si ocurre un error.
 	 */
 	public Personas getPersonaById(int personaId) {
 		Personas persona = new Personas();
@@ -207,15 +216,11 @@ public class PersonaDao {
 		return persona;
 	}
 
+	
 	/**
-	 * Método para filtrar y ordenar la lista de personas según criterios.
-	 * 
-	 * @param searchTerm término de búsqueda (para el nombre)
-	 * @param sortBy     campo por el cual ordenar (id_persona, nombre, apellido,
-	 *                   edad)
-	 * @return lista de Personas filtradas y ordenadas
-	 */
-	public List<Personas> selectFilteredAndSortedPersonas(String searchTerm, String sortBy) {
+	 * Filtra y ordena la lista de personas según un término de búsqueda y una columna de ordenamiento.
+	*/
+		public List<Personas> selectFilteredAndSortedPersonas(String searchTerm, String sortBy) {
 		List<Personas> personas = new ArrayList<>();
 		String sql = "SELECT * FROM personas WHERE 1=1"; // Cláusula base
 

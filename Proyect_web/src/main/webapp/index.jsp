@@ -103,7 +103,7 @@
     %>
 
     <h2 class="header-title">Formulario de Registro</h2>
-    <form action="PersonasServlet" method="POST">
+    <form id="formulario" action="PersonasServlet" method="POST">
         <input type="hidden" name="personaId" value="${persona.id}" />
         
         <div class="mb-3">
@@ -121,10 +121,12 @@
             <input type="number" class="form-control" id="edad" name="edad" required>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-custom">Enviar</button>
-        <a href="PersonasServlet?action=listPersona" class="btn btn-warning">Volver a la Lista</a>
+        <button type="submit" class="btn btn-primary btn-custom" id="enviar">Enviar</button>
+        <a href="PersonasServlet?action=listPersona"  class="btn btn-warning">Volver a la Lista</a>
     </form>
 </div>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>

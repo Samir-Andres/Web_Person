@@ -8,6 +8,16 @@
 <meta charset="UTF-8">
 <title>Estado de la Conexión</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+ <!--  
+// En este Jsp en el cuerpo se comprueba la conexion de la base de datos Creando un objeto con el nombre (test) 
+//   de la clase (conexion) donde se definieron los parametros de conexion en la clase (conexion) de igual forma se 
+//   crea un objeto de Connection donde de llama al metodo de la clase (conexion) para verificar si se conecta a la 
+//   base de datos o no dentro de una condiccion.
+//   
+ //  Por otro lado estan las etiquetas a que lleva a descargar pdf y excel que lo dirigue a un servlet para poder 
+//   Generarlos
+//
+-->
 <style>
     body {
         background-color: #f0f2f5;
@@ -82,14 +92,6 @@
 </head>
 <body>
 
-/* En este Jsp en el cuerpo se comprueba la conexion de la base de datos Creando un objeto con el nombre (test) 
-   de la clase (conexion) donde se definieron los parametros de conexion en la clase (conexion) de igual forma se 
-   crea un objeto de Connection donde de llama al metodo de la clase (conexion) para verificar si se conecta a la 
-   base de datos o no dentro de una condiccion.
-   
-   Por otro lado estan las etiquetas a que lleva a descargar pdf y excel que lo dirigue a un servlet para poder 
-   Generarlos
-*/
     <div class="main-container">
         <h1 class="mb-4">Estado de la Conexión</h1>
 

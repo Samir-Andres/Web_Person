@@ -225,6 +225,26 @@ text-decoration: none;
 
 }
 
+.boton-flotante-SMS{
+    position: fixed; /* Se mantiene en la misma posición relativa a la ventana del navegador */
+    top: 165px;       /* Distancia desde la parte superior de la ventana */
+    right: 20px;     /* Distancia desde el borde derecho de la ventana */
+    z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+    display: block;
+    margin: 10px;
+
+}
+
+.icono-SMS{
+    width: 40px;
+    height: 40px;
+    display: block;
+    right: 20px;
+    
+
+}
+
+
 </style>
 </head>
 <body>
@@ -232,6 +252,7 @@ text-decoration: none;
       
      <a href="CorreoSupports.jsp" class="boton-flotante-soporte"><img class="icono-soporte" src="imagenes/soporte.png" alt="Soporte">Soporte</a>
       <a href="dashboard.jsp" class="boton-flotante-campana"><img class="icono-campana" src="imagenes/notificacion.png"></a>
+      <a href="EnviarMensaje.jsp" class="boton-flotante-SMS"><img class="icono-SMS" src="imagenes/SMS.png"></a>
 	<div class="container">
 			
 			
@@ -288,20 +309,16 @@ text-decoration: none;
 							<td><c:out value="${persona.edad}" /></td>
 							<td class="text-center"><a href="PersonasServlet?action=edit&personaId=${persona.id}"class="button button-warning">Actualizar</a></td>
 							<td class="text-center"><a href="PersonasServlet?action=view&personaId=${persona.id}" class="button button-primary">Ver</a></td>
-						    <td class="text-center"><a href="PersonasServlet?action=delete&personaId=${persona.id}" class="button button-danger">Eliminar</a></td>
-						  
+						    <td class="text-center"><a href="PersonasServlet?action=delete&personaId=${persona.id}" class="button button-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar el registro de ${persona.nombre}?');">Eliminar</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
-			
-			
-			
-			
 		</div>
 	
 			
 	</div>
+
 
 </body>
 </html>
